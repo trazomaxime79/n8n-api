@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft Pink Email Composer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', 'Segoe UI', sans-serif; }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Soft Pink Mesh Gradient */
+            background-color: #fff5f7;
+            background-image: 
+                radial-gradient(at 0% 0%, #ffd1dc 0, transparent 50%), 
+                radial-gradient(at 100% 0%, #ffebf0 0, transparent 50%), 
+                radial-gradient(at 100% 100%, #fbc2eb 0, transparent 50%), 
+                radial-gradient(at 0% 100%, #ffd1dc 0, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Light Glassmorphism */
+        .glass-form {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px) saturate(120%);
+            -webkit-backdrop-filter: blur(15px) saturate(120%);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 24px;
+            padding: 40px;
+            width: 90%;
+            max-width: 420px;
+            box-shadow: 0 15px 35px rgba(255, 182, 193, 0.3);
+        }
+
+        h2 { 
+            color: #d6819e; 
+            text-align: center; 
+            margin-bottom: 25px; 
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        label { color: #8e6d78; font-size: 13px; font-weight: 600; margin-bottom: 8px; display: block; }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 20px;
+            border: 1.5px solid rgba(255, 182, 193, 0.3);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            color: #555;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder, textarea::placeholder { color: #c4a7b0; }
+
+        input:focus, textarea:focus {
+            background: #ffffff;
+            border-color: #ffb6c1;
+            box-shadow: 0 0 12px rgba(255, 182, 193, 0.4);
+            outline: none;
+        }
+
+        textarea { height: 110px; resize: none; }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #ffb6c1, #ffd1dc);
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 182, 193, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glass-form">
+        <h2>Compose Email</h2>
+        <form action="https://maximetrazo79.app.n8n.cloud/webhook/b7f96284-f669-4601-b273-e420f4db8da2" method="POST">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="example@gmail.com" required>
+
+            <label>Subject</label>
+            <input type="text" name="subject" placeholder="Enter subject line" required>
+
+            <label>Message</label>
+            <textarea name="message" placeholder="Type your message here..." required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+</body>
+</html>
